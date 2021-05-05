@@ -14,6 +14,10 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 // misc
 import {environment} from '../environments/environment';
+import { DriversComponent } from './pages/drivers/drivers.component';
+import { VehiclesComponent } from './pages/vehicles/vehicles.component';
+import { DocumentsComponent } from './pages/documents/documents.component';
+import { RatesComponent } from './pages/rates/rates.component';
 
 
 
@@ -21,7 +25,11 @@ import {environment} from '../environments/environment';
   declarations: [
     AppComponent,
     RidersComponent,
-    DashboardComponent
+    DashboardComponent,
+    DriversComponent,
+    VehiclesComponent,
+    DocumentsComponent,
+    RatesComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,60 @@
+<div class="content-wrapper">
+  <section class="content-header">
+    <h1>
+      All drivers
+      <small>Registered drivers</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a href="#">Drivers</a></li>
+    </ol>
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="box">
+          <div class="box-header with-border">
+            <!--              <h3 class="box-title">Bordered Table</h3>-->
+            <button class="btn btn-sm btn-success pull-right">Export</button>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+            <table class="table table-bordered table-hover">
+              <thead class="thead-dark">
+              <tr>
+                <th style="width: 3%">#</th>
+                <th style="width: 20%">Driver</th>
+                <th style="width: 15%">Vehicle Registration</th>
+                <th style="width: 15%">Contact Number</th>
+                <th style="width: 10%">Level</th>
+                <th style="width: 10%">Rating</th>
+                <th style="width: 10%">Trips</th>
+                <th style="width: 10%">Status</th>
+                <th style="width: 10%"></th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let driver of drivers | async" >
+                <td>1</td>
+                <td>{{driver.driver}}</td>
+                <td>  {{driver.registration}} </td>
+                <td></td>
+                <td>{{driver.level}}</td>
+                <td>{{driver.rating}}</td>
+                <td>{{driver.trip}}</td>
+                <td>{{driver.status}}</td>
+                <td><span class="badge bg-aqua"><i class="fas fa-eye-slash"></i></span> </td>
+              </tr>
+              </tbody>
+
+            </table>
+          </div>
+          <!-- /.box-body -->
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /.content -->
+</div>
