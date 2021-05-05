@@ -6,9 +6,11 @@ import {DashboardComponent} from './pages/dashboard/dashboard.component';
 import {VehiclesComponent} from './pages/vehicles/vehicles.component';
 import {DocumentsComponent} from './pages/documents/documents.component';
 import {RatesComponent} from './pages/rates/rates.component';
+import {LoginComponent} from './pages/login/login.component';
 
 const routes: Routes = [
-  { path:  '', redirectTo: '/dashboard', pathMatch: 'full'},
+  { path:  '', redirectTo: '/login', pathMatch: 'full'},
+  { path:  'login', component:  LoginComponent},
   { path:  'dashboard', component:  DashboardComponent},
   { path:  'riders', component:  RidersComponent},
   { path:  'drivers', component:  DriversComponent},

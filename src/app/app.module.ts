@@ -18,6 +18,7 @@ import { DriversComponent } from './pages/drivers/drivers.component';
 import { VehiclesComponent } from './pages/vehicles/vehicles.component';
 import { DocumentsComponent } from './pages/documents/documents.component';
 import { RatesComponent } from './pages/rates/rates.component';
+import { LoginComponent } from './pages/login/login.component';
 
 
 
@@ -29,7 +30,8 @@ import { RatesComponent } from './pages/rates/rates.component';
     DriversComponent,
     VehiclesComponent,
     DocumentsComponent,
-    RatesComponent
+    RatesComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
