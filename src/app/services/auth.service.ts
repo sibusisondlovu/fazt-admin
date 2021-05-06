@@ -4,6 +4,7 @@ import {AngularFireAuth} from '@angular/fire/auth';
 import {Router} from '@angular/router';
 import {User} from '../shared/services/user';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -32,8 +33,14 @@ export class AuthService {
 
   // tslint:disable-next-line:typedef
   signIn(email: any, password: any) {
+
+    console.log('success');
+    console.log(email);
+    console.log(password);
+
     return this.afAuth.signInWithEmailAndPassword(email, password)
       .then((result) => {
+        console.log('success');
         this.ngZone.run(() => {
           this.router.navigate(['dashboard']);
         });
@@ -45,7 +52,7 @@ export class AuthService {
 
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user') as string);
-    return (user !== null && user.emailVerified !== false) ? true : false;
+    return (user !== null) ? true : false;
   }
 
   // tslint:disable-next-line:typedef
@@ -60,6 +67,14 @@ export class AuthService {
     };
     return userRef.set(userData, {
       merge: true
+    });
+  }
+
+  // tslint:disable-next-line:typedef
+  signOut() {
+    return this.afAuth.signOut().then(() => {
+      localStorage.removeItem('user');
+      this.router.navigate(['login']);
     });
   }
 }

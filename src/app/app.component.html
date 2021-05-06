@@ -1,111 +1,118 @@
 
-<body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
-  <header class="main-header">
-    <!-- Logo -->
-    <a href="" class="logo">
+<div *ngIf="authService.isLoggedIn; else notShow">
+  <div class="hold-transition skin-black sidebar-mini">
+  <div class="wrapper">
+    <header class="main-header">
+      <!-- Logo -->
+      <a href="" class="logo">
 
-      <span class="logo-lg"><b>Fazt </b>BackOffice</span>
-    </a>
-    <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar navbar-static-top">
-      <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only">Toggle navigation</span>
+        <span class="logo-lg"><b>Fazt </b>BackOffice</span>
       </a>
+      <!-- Header Navbar: style can be found in header.less -->
+      <nav class="navbar navbar-static-top">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+          <span class="sr-only">Toggle navigation</span>
+        </a>
 
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-          <!-- User Account: style can be found in dropdown.less -->
-          <li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="../assets/img/user2-160x160.jpg" class="user-image" alt="Sibusiso Ndlovu">
-              <span class="hidden-xs">Sibusiso Ndlovu</span>
+        <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav">
+            <!-- User Account: style can be found in dropdown.less -->
+            <li class="dropdown user user-menu">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <img src="../assets/img/user2-160x160.jpg" class="user-image" alt="Sibusiso Ndlovu">
+                <span class="hidden-xs">Sibusiso Ndlovu</span>
+              </a>
+              <ul class="dropdown-menu">
+                <!-- User image -->
+                <li class="user-header">
+                  <img src="../assets/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                  <p>
+                    Sibusiso Ndlovu
+                    <small>Administrator</small>
+                  </p>
+                </li>
+                <!-- Menu Footer-->
+                <li class="user-footer">
+                  <div class="pull-right">
+                    <button class="btn btn-default btn-flat" (click)="authService.signOut()">Sign out</button>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+      <!-- sidebar: style can be found in sidebar.less -->
+      <section class="sidebar">
+        <!-- Sidebar user panel -->
+        <div class="user-panel">
+          <div class="pull-left image">
+            <img src="../assets/img/user2-160x160.jpg" class="img-circle" alt="Sibusiso Ndlovu">
+          </div>
+          <div class="pull-left info">
+            <p>Sibusiso Ndlovu</p>
+            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          </div>
+        </div>
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu" data-widget="tree">
+          <li class="header">MAIN NAVIGATION</li>
+          <li >
+            <a routerLink="dashboard">
+              <i class="fas fa-tachometer-alt"></i> <span> Dashboard</span>
             </a>
-            <ul class="dropdown-menu">
-              <!-- User image -->
-              <li class="user-header">
-                <img src="../assets/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          </li>
+          <li>
+            <a routerLink="riders">
+              <i class="fa fa-user"></i>
+              <span> Riders</span>
+            </a></li>
+          <li>
+            <a routerLink="drivers">
+              <i class="fa fa-taxi"></i> <span> Drivers</span>
+            </a>
+          </li>
+          <li>
+            <a routerLink="vehicles">
+              <i class="fas fa-car"></i>
+              <span> Vehicle Types</span>
+            </a>
+          </li>
+          <li>
+            <a routerLink="documents">
+              <i class="fas fa-id-card"></i>
+              <span> Documents</span>
+            </a>
+          </li>
 
-                <p>
-                  Sibusiso Ndlovu
-                  <small>Administrator</small>
-                </p>
-              </li>
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
-                </div>
-              </li>
-            </ul>
+          <li>
+            <a routerLink="rates">
+              <i class="far fa-money-bill-alt"></i> <span> Rates</span>
+            </a>
           </li>
         </ul>
-      </div>
-    </nav>
-  </header>
-  <!-- Left side column. contains the logo and sidebar -->
-  <aside class="main-sidebar">
-    <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar">
-      <!-- Sidebar user panel -->
-      <div class="user-panel">
-        <div class="pull-left image">
-          <img src="../assets/img/user2-160x160.jpg" class="img-circle" alt="Sibusiso Ndlovu">
-        </div>
-        <div class="pull-left info">
-          <p>Sibusiso Ndlovu</p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-        </div>
-      </div>
-      <!-- sidebar menu: : style can be found in sidebar.less -->
-      <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">MAIN NAVIGATION</li>
-        <li >
-          <a routerLink="dashboard">
-            <i class="fas fa-tachometer-alt"></i> <span> Dashboard</span>
-          </a>
-        </li>
-        <li>
-          <a routerLink="riders">
-            <i class="fa fa-user"></i>
-            <span> Riders</span>
-          </a></li>
-        <li>
-          <a routerLink="drivers">
-            <i class="fa fa-taxi"></i> <span> Drivers</span>
-          </a>
-        </li>
-        <li>
-          <a routerLink="vehicles">
-            <i class="fas fa-car"></i>
-            <span> Vehicle Types</span>
-          </a>
-        </li>
-        <li>
-          <a routerLink="documents">
-            <i class="fas fa-id-card"></i>
-            <span> Documents</span>
-          </a>
-        </li>
+      </section>
+      <!-- /.sidebar -->
+    </aside>
 
-        <li>
-          <a routerLink="rates">
-            <i class="far fa-money-bill-alt"></i> <span> Rates</span>
-          </a>
-        </li>
-      </ul>
-    </section>
-    <!-- /.sidebar -->
-  </aside>
+    <!-- Content Wrapper. Contains page content -->
+    <router-outlet></router-outlet>
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
+      <div class="pull-right hidden-xs">
+        <b>Version</b> 1.0.1
+      </div>
+      <strong>Copyright &copy; 2021  <a href="https://jaspasystems.co.za">Jaspa Systems (Pty) Ltd</a>.</strong> All rights
+      reserved.
+    </footer>
+  </div>
+  </div></div>
 
-  <!-- Content Wrapper. Contains page content -->
-  <router-outlet></router-outlet>
-  <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>Version</b> 1.0.1
-    </div>
-    <strong>Copyright &copy; 2021  <a href="https://jaspasystems.co.za">Jaspa Systems (Pty) Ltd</a>.</strong> All rights
-    reserved.
-  </footer></div>
+<ng-template #notShow>
+  <app-login></app-login>
+</ng-template>
